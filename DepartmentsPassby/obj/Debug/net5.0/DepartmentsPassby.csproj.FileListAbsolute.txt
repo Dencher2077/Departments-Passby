@@ -1,0 +1,12 @@
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/bin/Debug/net5.0/DepartmentsPassby.deps.json
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/bin/Debug/net5.0/DepartmentsPassby.dll
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/bin/Debug/net5.0/ref/DepartmentsPassby.dll
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/bin/Debug/net5.0/DepartmentsPassby.pdb
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.csprojAssemblyReference.cache
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.GeneratedMSBuildEditorConfig.editorconfig
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.AssemblyInfoInputs.cache
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.AssemblyInfo.cs
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.csproj.CoreCompileInputs.cache
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.dll
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/ref/DepartmentsPassby.dll
+/home/den/RiderProjects/DepartmentsPassby/DepartmentsPassby/obj/Debug/net5.0/DepartmentsPassby.pdb
