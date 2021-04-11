@@ -9,4 +9,19 @@
       <PackageReference Include="NUnit" Version="3.13.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Tests\Configs\config1.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="bin\Debug\net5.0\config1.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Tests\Configs\config2.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="bin\Debug\net5.0\config2.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

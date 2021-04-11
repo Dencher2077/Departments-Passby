@@ -5,12 +5,18 @@ using DepartmentsPassby.Models;
 
 namespace DepartmentsPassby
 {
+    /*
+     * Основной класс библиотеки.
+     * Обходит отделы и выполняет спцифические
+     * задачи согласно конфигурации из JSON файла
+     */
     public class Passby
     {   
         private DepartmentsManager DepartmentsManager { get; }
 
         private SealsManager SealsManager { get; } = new();
 
+        // Вторым аргументом можно отключить валидацию, но тогда могут сыпаться исключения при работе метода Start
         public Passby(string configPath, bool withValidation = true)
         {
             DepartmentsManager = ConfigParser.Parse(configPath);
@@ -21,6 +27,7 @@ namespace DepartmentsPassby
             }
         }
 
+        // Реализация алгоритма обхода отдело. Ну тут нужна целая документация
         public PassbyResult Start(string targetDepartmentName)
         {
             DepartmentsManager[targetDepartmentName].IsTarget = true;
@@ -62,6 +69,7 @@ namespace DepartmentsPassby
             return result;
         }
         
+        //Выбирает какое дейстие выполнить исходя из конфига. Возращает индекс отдела для перехода
         private int CallAction(int index, string actionName, string param )
         {
             switch (actionName)
@@ -78,22 +86,13 @@ namespace DepartmentsPassby
             }
         }
 
+        // Обнаруживает бесконечный цикл исходя из текущей суммы печатей
+        // и суммы печатей текущего отдела
         private bool IsInfiniteLoop(string currentSealsSum, string departmentSealsSum)
         {
             if (departmentSealsSum == null) return false;
             if (departmentSealsSum == currentSealsSum) return true;
             return false;
-        }
-        
-        private Dictionary<string, int> CreateDepartmentsMapper(Department[] departments)
-        {
-            Dictionary<string, int> result = new Dictionary<string, int>();
-            for (int i = 0; i < departments.Length; i++)
-            {
-                result.Add(departments[i].Title, i);
-            }
-
-            return result;
         }
     }
 }
