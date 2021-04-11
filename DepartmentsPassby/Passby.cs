@@ -6,25 +6,22 @@ namespace DepartmentsPassby
 {
     public class Passby
     {   
-        private Department[] Departments { get; }
-
-        private Dictionary<string, int> DepartmentsMapper { get; }
+        private DepartmentsManager DepartmentsManager { get; }
 
         private SealsManager SealsManager { get; } = new();
 
         public Passby(string configPath)
         {
-            Departments = ConfigParser.Parse(configPath);
-            DepartmentsMapper = CreateDepartmentsMapper(Departments);
+            DepartmentsManager = new DepartmentsManager(ConfigParser.Parse(configPath));
         }
 
         public List<List<string>> Start(string targetDepartmentName)
         {
-            Departments[DepartmentsMapper[targetDepartmentName]].IsTarget = true;
+            DepartmentsManager[targetDepartmentName].IsTarget = true;
             
-            for (int i = 0; i < Departments.Length; )
+            for (int i = 0; i < DepartmentsManager.Length; )
             {
-                var department = Departments[i];
+                var department = DepartmentsManager[i];
                 var rule = department.Rule;
 
                 switch (rule.Type)
@@ -65,7 +62,7 @@ namespace DepartmentsPassby
                     SealsManager.DeleteSeal(param);
                     return ++index;
                 case "goto":
-                    return DepartmentsMapper[param];
+                    return DepartmentsManager.IndexOf(param);
                 default: return index;
             }
         }
