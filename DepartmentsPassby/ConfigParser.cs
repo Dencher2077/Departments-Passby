@@ -8,10 +8,11 @@ namespace DepartmentsPassby
     {
         private record DepartmentsList(Department[] Departments);
         
-        public static Department[] Parse(string configPath)
+        public static DepartmentsManager Parse(string configPath)
         {
             string jsonConfig = File.ReadAllText(configPath);
-            return JsonSerializer.Deserialize<DepartmentsList>(jsonConfig)?.Departments;
+            Department[] departments = JsonSerializer.Deserialize<DepartmentsList>(jsonConfig).Departments;
+            return new DepartmentsManager(departments);
         }
     }
 }
