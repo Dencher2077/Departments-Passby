@@ -1,0 +1,38 @@
+{
+  "Departments": [
+    {
+      "Title": "Department 1",
+      "Rule": {
+        "Type": "unconditional",
+
+        "Action": "put",
+        "Param": "A"
+      }
+    },
+
+    {
+      "Title": "Department 2",
+      "Rule": {
+        "Type": "conditional",
+        "ConditionalSeal": "B",
+        
+        "Action": "put",
+        "Param": "C",
+
+        "ElseAction": "put",
+        "ElseParam": "B"
+      }
+    },
+
+     {
+      "Title": "Department 3",
+      "Rule": {
+        "Type": "unconditional",
+
+        "Action": "goto",
+        "Param": "Department 1"
+      }
+    }
+    
+  ]
+}
